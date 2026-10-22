@@ -91,7 +91,7 @@ resource "aws_security_group" "nginx_sg" {
 
 # INSTANCES #
 resource "aws_instance" "nginx1" {
-  ami                    = nonsensitive(data.aws_ssm_parameter.amzn2_linux.value)
+  ami                    = nonsensitive(data.aws_ssm_parameter.al2023_linux.value)
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.public_subnet1.id
   vpc_security_group_ids = [aws_security_group.nginx_sg.id]
